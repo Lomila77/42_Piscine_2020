@@ -1,4 +1,16 @@
-void ft_putnbr(int a)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/02 17:53:23 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/02 17:56:58 by garanceco        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putnbr(int a)
 {
 	int res;
 
@@ -17,7 +29,7 @@ void ft_putnbr(int a)
 	}
 }
 
-void ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
 	int a;
 	int b;
@@ -31,7 +43,7 @@ void ft_print_comb2(void)
 			ft_putnbr(a);
 			write(1, " ", 1);
 			ft_putnbr(b);
-			if(!(a == 98 && b == 99))
+			if (!(a == 98 && b == 99))
 				write(1, ", ", 2);
 			b++;
 		}

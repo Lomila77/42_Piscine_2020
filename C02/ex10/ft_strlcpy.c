@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 18:08:42 by garanceco         #+#    #+#             */
-/*   Updated: 2020/11/02 18:08:48 by garanceco        ###   ########.fr       */
+/*   Created: 2020/11/02 18:12:09 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/02 18:12:10 by garanceco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	while (*str)
+	unsigned int i;
+
+	i = -1;
+	while (str[++i])
+		;
+	return (i);
+}
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int i;
+
+	i = -1;
+	if (!(size))
+		return (0);
+	size--;
+	while (size && src[++i])
 	{
-		if (!(*str >= 'A' && *str <= 'Z'))
-			return (0);
-		*str++;
+		dest[i] = src[i];
+		size--;
 	}
-	return (1);
+	dest[++i] = '\0';
+	return (ft_strlen(src));
 }

@@ -1,4 +1,16 @@
-char *ft_strcpy(char *dest, char *src)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/02 18:02:04 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/02 18:02:06 by garanceco        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -6,5 +18,5 @@ char *ft_strcpy(char *dest, char *src)
 	while (src[++i])
 		dest[i] = src[i];
 	dest[i] = '\0';
-	return(dest);
+	return (dest);
 }

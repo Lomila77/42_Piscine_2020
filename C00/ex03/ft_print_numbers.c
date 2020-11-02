@@ -1,16 +1,25 @@
-void ft_putchar(char c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/02 17:49:12 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/02 17:55:09 by garanceco        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
 	char c;
 
-	c = '0';
-	while (c <= '9')
-	{
+	c = '0' - 1;
+	while (++c <= '9')
 		ft_putchar(c);
-		c++;
-	}
 }

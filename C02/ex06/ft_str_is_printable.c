@@ -1,11 +1,23 @@
-int ft_str_is_printable(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/02 18:09:25 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/02 18:09:26 by garanceco        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_str_is_printable(char *str)
 {
 	while (*str)
 	{
 		if ((*str >= 0 && *str <= 31)
 			|| (*str >= 127))
-			return(0);
+			return (0);
 		*str++;
 	}
-	return(1);
+	return (1);
 }

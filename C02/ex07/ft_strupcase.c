@@ -1,4 +1,16 @@
-char *ft_strupcase(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/02 18:14:11 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/02 18:14:13 by garanceco        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strupcase(char *str)
 {
 	int i;
 
@@ -6,5 +18,5 @@ char *ft_strupcase(char *str)
 	while (str[++i])
 		if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
-	return(str);
+	return (str);
 }
