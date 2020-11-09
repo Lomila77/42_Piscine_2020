@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 18:12:49 by garanceco         #+#    #+#             */
-/*   Updated: 2020/11/09 16:42:18 by garanceco        ###   ########.fr       */
+/*   Created: 2020/11/07 17:59:14 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/09 16:48:12 by garanceco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,31 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_puthexa(char c)
+int	ft_atoi(char *str)
 {
-	char	base[16];
-	int	i;
+	int i;
+	int val;
+	int res;
 
 	i = 0;
-	base = "0123456789abcdef";
-	if (c <= 16)
+	val = 0;
+	res = 0;
+	while (str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == ' ')
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		write(1, "0", 1);
-		ft_putchar(base[c]);
+		if (str[i] == '-')
+			val++;
+		i++;
 	}
-	if (c / 16 > 0)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		ft_puthexa(c / 16);
-		i = c % 16 + 1;
-		ft_putchar(base[i]);
+		res = res * 10 + (str[i] - 48);
+		i++;
 	}
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i])
-	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			write(1, "\\", 1);
-			ft_puthexa(str[i]);
-		}
-		else
-			ft_putchar(str[i]);
-	}
+	if (val % 2 != 0)
+		res *= -1;
+	return (res);
 }

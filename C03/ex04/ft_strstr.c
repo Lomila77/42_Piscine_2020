@@ -1,53 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 18:12:49 by garanceco         #+#    #+#             */
-/*   Updated: 2020/11/09 16:42:18 by garanceco        ###   ########.fr       */
+/*   Created: 2020/11/06 13:17:29 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/09 16:44:16 by garanceco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
+char	*ft_strstr(char *str, char *to_find)
 {
-	write(1, &c, 1);
-}
-
-void	ft_puthexa(char c)
-{
-	char	base[16];
-	int	i;
-
-	i = 0;
-	base = "0123456789abcdef";
-	if (c <= 16)
-	{
-		write(1, "0", 1);
-		ft_putchar(base[c]);
-	}
-	if (c / 16 > 0)
-	{
-		ft_puthexa(c / 16);
-		i = c % 16 + 1;
-		ft_putchar(base[i]);
-	}
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
+	int i;
+	int a;
+	int b;
 
 	i = -1;
+	a = 0;
 	while (str[++i])
 	{
-		if (str[i] < 32 || str[i] > 126)
+		b = i;
+		while (str[b] == to_find[a] && to_find[a])
 		{
-			write(1, "\\", 1);
-			ft_puthexa(str[i]);
+			a++;
+			b++;
 		}
-		else
-			ft_putchar(str[i]);
+		if (!(to_find[a]))
+			return (&str[i]);
+		a = 0;
 	}
+	return (0);
 }

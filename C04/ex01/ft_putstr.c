@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 18:12:49 by garanceco         #+#    #+#             */
-/*   Updated: 2020/11/09 16:42:18 by garanceco        ###   ########.fr       */
+/*   Created: 2020/11/07 15:59:58 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/09 16:45:27 by garanceco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,8 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_puthexa(char c)
+void	ft_putstr(char *str)
 {
-	char	base[16];
-	int	i;
-
-	i = 0;
-	base = "0123456789abcdef";
-	if (c <= 16)
-	{
-		write(1, "0", 1);
-		ft_putchar(base[c]);
-	}
-	if (c / 16 > 0)
-	{
-		ft_puthexa(c / 16);
-		i = c % 16 + 1;
-		ft_putchar(base[i]);
-	}
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i])
-	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			write(1, "\\", 1);
-			ft_puthexa(str[i]);
-		}
-		else
-			ft_putchar(str[i]);
-	}
+	while (*str)
+		ft_putchar(*str++);
 }
