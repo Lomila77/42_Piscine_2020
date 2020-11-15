@@ -1,4 +1,15 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_convert_base.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/14 19:12:18 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/14 19:12:20 by garanceco        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	check_base(char *base)
 {
 	int i;
@@ -69,7 +80,7 @@ int	ft_atoi_base(char *str, char *base)
 	else
 		while (str[i] && find_base(base, str[i]) != -1)
 			i++;
-	while (str[--i] >= *str && (str[i] != '-' && str[i] != '+' &&
+	while (--i >= 0 && (str[i] != '-' && str[i] != '+' &&
 		str[i] != '\t' && str[i] != '\n'
 		&& str[i] != '\v' && str[i] != '\f'
 		&& str[i] != '\r' && str[i] != ' '))

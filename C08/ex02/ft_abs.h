@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 14:06:17 by garanceco         #+#    #+#             */
-/*   Updated: 2020/11/14 19:23:20 by garanceco        ###   ########.fr       */
+/*   Created: 2020/11/14 09:22:17 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/14 09:22:22 by garanceco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(char *src)
-{
-	int	i;
-	char	*dest;
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-	i = 0;
-	while (src[i])
-		i++;
-	dest = malloc(sizeof(*dest) * i);
-	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
-}
+# define ABS(Value)	if (Value < 1) \
+				Value *= -1;
+
+#endif

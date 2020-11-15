@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garancecolomer <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 14:06:17 by garanceco         #+#    #+#             */
-/*   Updated: 2020/11/14 19:23:20 by garanceco        ###   ########.fr       */
+/*   Created: 2020/11/15 13:10:31 by garanceco         #+#    #+#             */
+/*   Updated: 2020/11/15 13:11:42 by garanceco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(char *src)
-{
-	int	i;
-	char	*dest;
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-	i = 0;
-	while (src[i])
-		i++;
-	dest = malloc(sizeof(*dest) * i);
-	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
-}
+typedef struct	s_point
+{
+	int x;
+	int y;
+}		t_point;
+
+#endif
